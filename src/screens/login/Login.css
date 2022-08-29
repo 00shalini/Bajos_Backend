@@ -1,0 +1,14 @@
+.wb-text {
+    font-size: 48px;
+    padding: 6px 0;
+    color: #fff;
+}
+
+.input-con {
+    display: flex;
+    align-items: center;
+}
+
+.img-input {
+    transform: translateX(40px);
+}
