@@ -1,4 +1,6 @@
+
 const firebase = require("firebase");
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyCPZ6r8PhcU6JIx_-qG165iQbgsWAOSlsQ",
@@ -23,3 +25,4 @@ module.exports = db;
 // module.exports = addNewProduct;
 // module.exports = addContractor;
 // module.exports = addProductToManufacturing;
+
