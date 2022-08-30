@@ -69,17 +69,6 @@ const getRawMaterial = async (req, res) => {
   }
 };
 
-// const updateRawMaterial = async (req,res) => {
-//    try {
-//      const id = req.params.id;
-//      const data = req.body;
-//      const rawMaterial = await firestore.collection('addRawMaterial').doc(id);
-//      await rawMaterial.update(data);
-//      res.send('updated successsfully');
-//    } catch(error) {
-//     res.status(400).send(error.message);
-//    }
-// }
 
 const deleteRawMaterial = async (req, res) => {
   try {

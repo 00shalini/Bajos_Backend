@@ -25,15 +25,18 @@ const getNewProducts = async (req, res) => {
       data.forEach((doc) => {
         const newProduct = new Product(
           doc.data().name,
-          doc.data().rm,
+          doc.data().raw,
+          // doc.data().rm,
+          // doc.data().qty,
           doc.data().sr,
           doc.data().sku,
+
           doc.data().category,
-          doc.data().used_qty_in_meter,
           doc.id
         );
         newProductArray.push(newProduct);
       });
+
       res.send(newProductArray);
     }
   } catch (error) {
@@ -69,19 +72,19 @@ const updateProduct = async (req, res) => {
 };
 
 const deleteProduct = async (req, res) => {
-    try {
-     const id = req.params.id;
-     await firestore.collection('addNewProduct').doc(id).delete();
-     res.send('data deleted');
-    } catch (error) {
-        res.status(400).send(error.message);
-    }
-}
+  try {
+    const id = req.params.id;
+    await firestore.collection("addNewProduct").doc(id).delete();
+    res.send("data deleted");
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
 
 module.exports = {
   addNewProduct,
   getNewProducts,
   getNewProduct,
   updateProduct,
-  deleteProduct
+  deleteProduct,
 };
