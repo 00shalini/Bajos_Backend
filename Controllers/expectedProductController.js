@@ -26,7 +26,7 @@ const getExpectedProduct = async (req, res) => {
         const expectedPro = new ExpectedProduct(
           doc.data().recieved_product,
           doc.data().recieved_raw,
-          
+          doc.data().raw_id
         );
         expectedProArray.push(expectedPro);
       });
