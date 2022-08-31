@@ -28,7 +28,8 @@ const getProductsToManufacturing = async (req, res) => {
           doc.data().product,
           doc.data().labour_cost_per_pcs,
           doc.data().cur_date,
-          doc.ids
+          doc.data().raw_data,
+          doc.id
         );
         productToManufacturingArray.push(productToManufacturing);
       });

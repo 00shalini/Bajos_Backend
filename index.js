@@ -12,6 +12,7 @@ const loginRoutes = require('./Routes/loginRoutes');
 const productToManufacture = require('./Routes/productToManufactureRoutes');
 const endProductRoutes = require('./Routes/endProductRoutes');
 const expectedProduct = require('./Routes/expectedProductRoutes');
+const report = require('./Routes/reportRoutes');
 
 const app = express();
 app.use(cors({origin:true}));
@@ -26,6 +27,7 @@ app.use('/',loginRoutes.routes);
 app.use('/',productToManufacture.routes);
 app.use('/',endProductRoutes.routes);
 app.use('/',expectedProduct.routes);
+app.use('/',report.routes);
 //for authentication
 
 app.listen(8080, () =>
