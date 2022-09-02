@@ -14,20 +14,14 @@ const addReport = async (req, res) => {
 
 const getReport = async (req, res) => {
   try {
-    const report = await firestore.collection(
-      "addReport"
-    );
+    const report = await firestore.collection("addReport");
     const data = await report.get();
     const reportArray = [];
     if (data.empty) {
       res.send(404).send("no records");
     } else {
       data.forEach((doc) => {
-        const report = new Report(
-          doc.data().cost_of_pcs,
-          doc.data().raw_id,
-          
-        );
+        const report = new Report(doc.data().cost_of_pcs, doc.data().raw_id);
         reportArray.push(report);
       });
       res.send(reportArray);
@@ -37,12 +31,7 @@ const getReport = async (req, res) => {
   }
 };
 
-
-
 module.exports = {
   addReport,
   getReport,
-
-  // updateProduct,
-  //deleteProduct
 };
